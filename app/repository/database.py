@@ -7,7 +7,7 @@ class Base(DeclarativeBase):
 
 
 def criar_engine(url: str) -> Engine:
-    return create_engine(url)
+    return create_engine(url, connect_args={"check_same_thread": False})
 
 
 def criar_fabrica_de_sessao(engine: Engine) -> sessionmaker:
